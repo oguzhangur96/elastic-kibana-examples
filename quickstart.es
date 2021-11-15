@@ -81,3 +81,4 @@ DELETE this-is-a-test/_doc/chicago979695chicago919293
 
 // Try to read Kobe Bryant's document
 GET this-is-a-test/_doc/chicago979695chicago919293
+

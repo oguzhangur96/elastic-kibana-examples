@@ -110,4 +110,3 @@ GET my-index-000001/_mapping
 
 // View the mapping of specific field
 GET my-index-000001/_mapping/field/name
-

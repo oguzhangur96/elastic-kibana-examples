@@ -318,3 +318,4 @@ GET kibana_sample_data_logs/_search
         }
     }
 }
+
