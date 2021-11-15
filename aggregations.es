@@ -171,3 +171,29 @@ POST kibana_sample_data_logs/_search?size=0
         }
     }
 }
+
+// We can use an agrregation as input of other aggregation. First lets do a bucket aggregation than do a metric aggregation.
+
+POST kibana_sample_data_logs/_search?size=0
+{
+    "aggs": {
+        "os_specification": {
+            "terms": {
+                "field": "machine.os.keyword"
+            },
+            "aggs": {
+                "average_bytes": {
+                    "avg": {
+                        "field": "bytes"
+                    }
+                }
+            }
+        },
+        "the_min": {
+            "min_bucket": {
+                "buckets_path": "os_specification>average_bytes"
+            }
+        }
+    }
+}
+
