@@ -61,6 +61,14 @@ PUT this-is-a-test/_create/chicago979695chicago919293
     "reason": "Will get an error, because we do not want to overwrite Jordan"
 }
 
+// USE PUT _bulk to insert more than one document
+POST _bulk
+{ "create" : { "_index" : "this-is-a-test", "_id" : "chicago879695chicago919293" } }
+{"first_name": "Scottie Pippen","reason": "Will get an error, because we do not want to overwrite Jordan"}
+{ "create" : { "_index" : "this-is-a-test", "_id" : "chicago979695chicago919293" } }
+{"first_name": "Scottie Pippen","reason": "Will get an error, because we do not want to overwrite Jordan"}
+{ "create" : { "_index" : "this-is-a-test", "_id" : "chicago679695chicago919293" } }
+{"first_name": "Scottie Pippen","reason": "Will get an error, because we do not want to overwrite Jordan"}
 
 // read documents with unique id
 GET this-is-a-test/_doc/chicago979695chicago919293
